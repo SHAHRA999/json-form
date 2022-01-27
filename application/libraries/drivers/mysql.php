@@ -16,16 +16,16 @@ class Mysql_Driver {
         $config = array();
         switch ($_SESSION['project_path']):
             case 'cd':
-                $config['host'] = 'localhost';
-                $config['user'] = 'root';
-                $config['password'] = 'root';
-                $config['database'] = 'his_kkm_local';
-                $config['port'] = '3307';
-//                $config['host'] = '202.171.33.109';
-//                $config['user'] = 'root';
-//                $config['password'] = 'R00t@!23';
-//                $config['database'] = 'his_kkm';
-//                $config['port'] = '3306';
+                // $config['host'] = 'localhost';
+                // $config['user'] = 'root';
+                // $config['password'] = 'root';
+                // $config['database'] = 'his_kkm_local';
+                // $config['port'] = '3307';
+               $config['host'] = '202.171.33.109';
+               $config['user'] = 'root';
+               $config['password'] = 'R00t@!23';
+               $config['database'] = 'his_kkm';
+               $config['port'] = '3306';
                 break;
             case 'rispac':
                 $config['host'] = '202.171.33.125';
@@ -35,11 +35,16 @@ class Mysql_Driver {
                 $config['port'] = '13306';
                 break;
             case 'uat':
-                $config['host'] = 'localhost';
+                // $config['host'] = 'localhost';
+                // $config['user'] = 'root';
+                // $config['password'] = 'root';
+                // $config['database'] = 'his_kkm_local';
+                // $config['port'] = '3307';
+                $config['host'] = '202.171.33.109';
                 $config['user'] = 'root';
-                $config['password'] = 'root';
-                $config['database'] = 'his_kkm_local';
-                $config['port'] = '3307';
+                $config['password'] = 'R00t@!23';
+                $config['database'] = 'his_kkm';
+                $config['port'] = '3306';
                 break;
         endswitch;
         return $config;

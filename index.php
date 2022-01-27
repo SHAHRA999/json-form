@@ -3,12 +3,18 @@ session_start();
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $params = explode('/', $_SERVER['REQUEST_URI']);
 
+// echo "<pre>";
+// var_dump($params);
+
+// die();
+
 function ob_html_compress($buf){
     return preg_replace(array('/<!--(.*)-->/Uis',"/[[:blank:]]+/"),array('',' '),str_replace(array("\n","\r","\t"),'',$buf));
 }
 
 //ob_start("ob_html_compress");
-define('APPS_NAME','jsonformnew');
+// define('APPS_NAME','jsonformnew');
+define('APPS_NAME','json-form');
 define('SERVER_ROOT', __DIR__ .'/');
 define('VIEW', 'application/views');
 define('CONTROLLER', 'application/controllers');

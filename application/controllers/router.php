@@ -23,7 +23,8 @@ endif;
 //$page = ($logid) ? 'main' : 'product' ; //change to 1st main to login back if database is setup
 $target = SERVER_ROOT . 'application/controllers/' . $page . '.php';
 
-function __autoload($className) {
+// Change from __autoload to function name as __autoload is depreciated in php8
+function customAutoloader($className) {
     list($suffix, $filename) = preg_split('/_/', strrev($className), 2);
     $filename = strrev($filename);
     $suffix = strrev($suffix);
@@ -58,6 +59,8 @@ function __autoload($className) {
         die("File '$filename' containing class '$className' not found in '$folder'.");
     }
 }
+
+spl_autoload_register("customAutoloader"); //autoload function for php8
 
 if (file_exists($target)) {
     include_once 'application/libraries/functions/main.php';
